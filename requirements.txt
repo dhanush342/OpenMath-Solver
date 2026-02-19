@@ -1,0 +1,7 @@
+torch
+transformers>=4.40.0
+peft>=0.10.0
+bitsandbytes>=0.43.0
+accelerate>=0.29.0
+safetensors>=0.4.3
+flask>=3.0.0

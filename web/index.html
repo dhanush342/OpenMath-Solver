@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OpenMath Interface</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <div>
+          <h1>OpenMath</h1>
+          <p>Step-by-step math reasoning with a fine-tuned Qwen2.5-Math-1.5B LoRA adapter.</p>
+        </div>
+        <div class="badge">Local Inference</div>
+      </header>
+
+      <section class="panel">
+        <div class="model-row">
+          <div>
+            <div class="label">Base model</div>
+            <div class="model-value">Qwen/Qwen2.5-Math-1.5B</div>
+          </div>
+          <div>
+            <div class="label">Adapter</div>
+            <div class="model-value">Local LoRA (adapter_model.safetensors)</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <label class="label" for="question">Problem</label>
+        <textarea id="question" rows="6" placeholder="Type a math word problem..."></textarea>
+        <div class="controls">
+          <div class="inline">
+            <label for="maxTokens">Max tokens</label>
+            <input id="maxTokens" type="number" min="32" max="512" value="200" />
+          </div>
+          <button id="solveBtn">Solve</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="output-header">
+          <h2>Answer</h2>
+          <span id="status" class="status">Idle</span>
+        </div>
+        <pre id="output" class="output"></pre>
+      </section>
+
+      <footer class="footer">
+        <span>Template matches training prompt.</span>
+      </footer>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
